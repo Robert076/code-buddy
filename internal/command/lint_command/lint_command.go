@@ -38,3 +38,7 @@ func (l *LintCommand) Run(args []string) error {
 func (l *LintCommand) Subcommands() []command.Command {
 	return []command.Command{}
 }
+
+type LintCommandBuilder struct {
+	lint *LintCommand
+}
