@@ -18,36 +18,8 @@ func (l *LintGoCommand) Description() string {
 }
 
 func (l *LintGoCommand) Run(args []string) error {
-	fmt.Println(`
-	name: linter
-
-	on:
-	push:
-		branches: ["main"]
-		paths:
-		- "**.go"
-	pull_request:
-		branches: ["main"]
-		paths:
-		- "**.go"
-	jobs:
-	lint:
-		name: Lint
-		runs-on: ubuntu-latest
-		timeout-minutes: 3
-		steps:
-		- uses: actions/checkout@v4
-			with:
-			fetch-depth: 1
-		- name: Setup Go
-			uses: actions/setup-go@v5
-			with:
-			go-version: "1.23"
-		- name: Install golangci-lint
-			run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-		- name: Run golangci-lint
-			run: golangci-lint run ./cmd/devops-buddy
-	`) // should be replaced with an api call in the future
+	// should be replaced with an api call in the future
+	fmt.Println("name: linter\non:\n  push:\n    branches: [\"main\"]\n    paths: [\"**.go\"]\n  pull_request:\n    branches: [\"main\"]\n    paths: [\"**.go\"]\njobs:\n  lint:\n    name: Lint\n    runs-on: ubuntu-latest\n    timeout-minutes: 3\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 1\n      - name: Setup Go\n        uses: actions/setup-go@v5\n        with:\n          go-version: \"1.23\"\n      - name: Install golangci-lint\n        run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest\n      - name: Run golangci-lint\n        run: golangci-lint run ./cmd/devops-buddy")
 	return nil
 }
 
