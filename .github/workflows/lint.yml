@@ -25,4 +25,4 @@ jobs:
       - name: Install golangci-lint
         run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
       - name: Run golangci-lint
-        run: golangci-lint run ./cmd/auth-service
+        run: golangci-lint run ./cmd/devops-buddy
