@@ -10,7 +10,7 @@ on:
     paths:
       - "**.go"
 jobs:
-  lint:
+  coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
     timeout-minutes: 3
@@ -26,3 +26,7 @@ jobs:
         run: chmod +x ./.github/workflows/test.sh
       - name: Tests
         run: ./.github/workflows/test.sh
+      - name: Upload coverage to summary
+        run: |
+          echo "### Test Coverage" >> $GITHUB_STEP_SUMMARY
+          go tool cover -func=coverage.out | grep total | awk '{print $3}' >> $GITHUB_STEP_SUMMARY

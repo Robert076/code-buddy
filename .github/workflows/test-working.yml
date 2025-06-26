@@ -10,7 +10,7 @@ on:
     paths:
       - "**.go"
 jobs:
-  lint:
+  tests:
     name: Tests Working
     runs-on: ubuntu-latest
     timeout-minutes: 3
