@@ -25,4 +25,4 @@ jobs:
       - name: Tests Permissions
         run: chmod +x ./.github/workflows/test.sh
       - name: Tests
-        run: ./test.sh
+        run: ./.github/workflows/test.sh
