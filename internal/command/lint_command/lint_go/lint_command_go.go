@@ -47,7 +47,7 @@ func (l *LintGoCommand) Run(args []string) error {
 			run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 		- name: Run golangci-lint
 			run: golangci-lint run ./cmd/devops-buddy
-	`) // should be replaced with an api call
+	`) // should be replaced with an api call in the future
 	return nil
 }
 
