@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/Robert076/devops-buddy/internal/command"
+	"github.com/Robert076/devops-buddy/internal/command/lint_command/lint_go"
 )
 
 type LintCommand struct{}
@@ -36,5 +37,7 @@ func (l *LintCommand) Run(args []string) error {
 }
 
 func (l *LintCommand) Subcommands() []command.Command {
-	return []command.Command{}
+	return []command.Command{
+		&lint_go.LintGoCommand{},
+	}
 }

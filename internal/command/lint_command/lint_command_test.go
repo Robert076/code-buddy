@@ -21,8 +21,8 @@ func TestLintCommand_Description(t *testing.T) {
 func TestLintCommand_Subcommands(t *testing.T) {
 	cmd := &LintCommand{}
 	subs := cmd.Subcommands()
-	if len(subs) != 0 {
-		t.Errorf("Expected empty subcommands list, got %d", len(subs))
+	if len(subs) != 1 {
+		t.Errorf("Expected one subcommand in list, got %d", len(subs))
 	}
 }
 
@@ -43,10 +43,17 @@ func TestLintCommand_Run(t *testing.T) {
 		},
 		{
 			"Invalid - unknown linter",
-			[]string{"go"},
+			[]string{"this-linter-doesnt-exist"},
 			true,
-			"unknown linter: go",
-			"User runs the Lint command and specifies a linter that is not supported. It should throw an error.",
+			"unknown linter: this-linter-doesnt-exist",
+			"User runs the Lint command and specifies a linter that is NOT supported. It should throw an error.",
+		},
+		{
+			"Valid - known linter",
+			[]string{"go"},
+			false,
+			"",
+			"User runs the Lint command and specifies a linter that is supported. It should work fine.",
 		},
 	}
 

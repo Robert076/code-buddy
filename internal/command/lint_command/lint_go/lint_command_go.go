@@ -1,0 +1,56 @@
+package lint_go
+
+import (
+	"fmt"
+
+	"github.com/Robert076/devops-buddy/internal/command"
+)
+
+type LintGoCommand struct {
+}
+
+func (l *LintGoCommand) Name() string {
+	return "go"
+}
+
+func (l *LintGoCommand) Description() string {
+	return "Returns a Github Action with a go linter"
+}
+
+func (l *LintGoCommand) Run(args []string) error {
+	fmt.Println(`
+	name: linter
+
+	on:
+	push:
+		branches: ["main"]
+		paths:
+		- "**.go"
+	pull_request:
+		branches: ["main"]
+		paths:
+		- "**.go"
+	jobs:
+	lint:
+		name: Lint
+		runs-on: ubuntu-latest
+		timeout-minutes: 3
+		steps:
+		- uses: actions/checkout@v4
+			with:
+			fetch-depth: 1
+		- name: Setup Go
+			uses: actions/setup-go@v5
+			with:
+			go-version: "1.23"
+		- name: Install golangci-lint
+			run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+		- name: Run golangci-lint
+			run: golangci-lint run ./cmd/devops-buddy
+	`) // should be replaced with an api call
+	return nil
+}
+
+func (l *LintGoCommand) Subcommands() []command.Command {
+	return nil // leaf command
+}
