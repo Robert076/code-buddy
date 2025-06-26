@@ -1,4 +1,4 @@
-name: tester
+name: tester-working
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - "**.go"
 jobs:
   lint:
-    name: Test
+    name: Tests Working
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -22,7 +22,5 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: "1.23"
-      - name: Tests Permissions
-        run: chmod +x ./.github/workflows/test.sh
       - name: Tests
-        run: ./.github/workflows/test.sh
+        run: go test ./... -v -cover
