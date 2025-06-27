@@ -1,6 +1,8 @@
 package registry
 
 import (
+	"fmt"
+
 	"github.com/Robert076/code-buddy/internal/command"
 	"github.com/Robert076/code-buddy/internal/command/lint_command"
 )
@@ -24,6 +26,11 @@ func (c *CommandRegistry) InitRegistry() {
 }
 
 func (c *CommandRegistry) RunCommand(name string, args []string) error {
-	c.commands[name].Run(args)
-	return nil
+	cmd, ok := c.commands[name]
+	if ok {
+		cmd.Run(args)
+		return nil
+	} else {
+		return fmt.Errorf("command '%s' is not recognised", name)
+	}
 }

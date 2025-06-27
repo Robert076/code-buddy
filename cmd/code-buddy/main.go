@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Robert076/code-buddy/internal/registry"
 )
@@ -11,10 +12,8 @@ func main() {
 
 	reg.InitRegistry()
 
-	var args []string
-	args = append(args, "go")
-	err := reg.RunCommand("lint", args)
+	err := reg.RunCommand(os.Args[1], os.Args[2:])
 	if err != nil {
-		fmt.Print("Hello World!")
+		fmt.Printf("Error running command: %v", err)
 	}
 }

@@ -42,6 +42,14 @@ func TestCommandRegistry_Run(t *testing.T) {
 			"",
 			"User runs the 'lint go' command",
 		},
+		{
+			"Invalid - unknown command (command not recognized)",
+			"lintt",
+			[]string{"go"},
+			true,
+			"command 'lintt' is not recognised",
+			"User runs 'lint' command for a linter that doesnt exist",
+		},
 	}
 
 	for _, tt := range tests {
