@@ -1,4 +1,4 @@
-module github.com/Robert076/devops-buddy
+module github.com/Robert076/code-buddy
 
 go 1.23.2
 

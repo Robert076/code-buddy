@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Robert076/devops-buddy/internal/registry"
+	"github.com/Robert076/code-buddy/internal/registry"
 )
 
 func main() {

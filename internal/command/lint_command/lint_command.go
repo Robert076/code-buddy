@@ -3,8 +3,8 @@ package lint_command
 import (
 	"fmt"
 
-	"github.com/Robert076/devops-buddy/internal/command"
-	"github.com/Robert076/devops-buddy/internal/command/lint_command/lint_go"
+	"github.com/Robert076/code-buddy/internal/command"
+	"github.com/Robert076/code-buddy/internal/command/lint_command/lint_go"
 )
 
 type LintCommand struct{}

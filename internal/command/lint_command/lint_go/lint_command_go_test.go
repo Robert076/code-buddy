@@ -3,7 +3,7 @@ package lint_go
 import (
 	"testing"
 
-	capture_output "github.com/Robert076/devops-buddy/internal/utils"
+	capture_output "github.com/Robert076/code-buddy/internal/utils"
 	"github.com/stretchr/testify/assert"
 )
 

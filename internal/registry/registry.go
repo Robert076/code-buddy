@@ -1,8 +1,8 @@
 package registry
 
 import (
-	"github.com/Robert076/devops-buddy/internal/command"
-	"github.com/Robert076/devops-buddy/internal/command/lint_command"
+	"github.com/Robert076/code-buddy/internal/command"
+	"github.com/Robert076/code-buddy/internal/command/lint_command"
 )
 
 type CommandRegistry struct {
