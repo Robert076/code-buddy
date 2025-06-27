@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/Robert076/code-buddy/internal/registry"
 )
 
@@ -11,5 +13,8 @@ func main() {
 
 	var args []string
 	args = append(args, "go")
-	reg.RunCommand("lint", args)
+	err := reg.RunCommand("lint", args)
+	if err != nil {
+		fmt.Print("Hello World!")
+	}
 }
