@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/Robert076/devops-buddy/internal/registry"
+)
 
 func main() {
-	fmt.Println("Hello world!")
+	var reg = registry.NewCommandRegistry()
+
+	reg.InitRegistry()
+
+	var args []string
+	args = append(args, "go")
+	reg.RunCommand("lint", args)
 }
