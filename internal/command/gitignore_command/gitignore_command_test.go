@@ -17,3 +17,20 @@ func TestGitignoreCommand_Description(t *testing.T) {
 		t.Fatalf("GitignoreCommand.Description() = %v, want %v", got, want)
 	}
 }
+
+func TestGitignoreCommand_Run(t *testing.T) {
+	tests := []struct {
+		name string
+
+		args    []string
+		wantErr bool
+	}{}
+}
+func TestGitignoreCommand_Subcommands(t *testing.T) {
+	cmd := &GitignoreCommand{}
+	subcommands := cmd.Subcommands()
+
+	if len(subcommands) != 1 {
+		t.Errorf("Expected %d subcommands, got %d", 1, len(subcommands))
+	}
+}

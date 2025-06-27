@@ -20,7 +20,7 @@ func TestCommandRegistry_Init(t *testing.T) {
 		t.Fatal("Expected non-nil list of commands in registry")
 	}
 
-	if len(cmd.commands) != 1 {
+	if len(cmd.commands) != 2 {
 		t.Fatalf("Expected length of commands %d, got %d", 1, len(cmd.commands))
 	}
 }

@@ -2,8 +2,10 @@ package gitignore_command
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/Robert076/code-buddy/internal/command"
+	"github.com/Robert076/code-buddy/internal/command/gitignore_command/gitignore_go"
 )
 
 type GitignoreCommand struct {
@@ -28,7 +30,7 @@ func (g *GitignoreCommand) Run(args []string) error {
 	}
 
 	for _, sub := range g.Subcommands() {
-		if sub.Name() == args[0] {
+		if strings.EqualFold(sub.Name(), args[0]) {
 			return sub.Run(args[1:])
 		}
 	}
@@ -37,5 +39,7 @@ func (g *GitignoreCommand) Run(args []string) error {
 }
 
 func (g *GitignoreCommand) Subcommands() []command.Command {
-	return nil
+	return []command.Command{
+		&gitignore_go.GitignoreCommandGo{},
+	}
 }
