@@ -20,7 +20,7 @@ func TestCommandRegistry_Init(t *testing.T) {
 		t.Fatal("Expected non-nil list of commands in registry")
 	}
 
-	if len(cmd.commands) != 2 {
+	if len(cmd.commands) != 1 {
 		t.Fatalf("Expected length of commands %d, got %d", 1, len(cmd.commands))
 	}
 }
@@ -35,19 +35,19 @@ func TestCommandRegistry_Run(t *testing.T) {
 		description string
 	}{
 		{
-			"Valid - run 'lint go' command",
-			"lint",
+			"Valid - run 'gitignore go' command (this is an integration test)",
+			"gitignore",
 			[]string{"go"},
 			false,
 			"",
-			"User runs the 'lint go' command",
+			"User runs the 'gitignore go' command",
 		},
 		{
 			"Invalid - unknown command (command not recognized)",
-			"lintt",
+			"this-command-doesnt-exist",
 			[]string{"go"},
 			true,
-			"command 'lintt' is not recognised",
+			"command 'this-command-doesnt-exist' is not recognised",
 			"User runs 'lint' command for a linter that doesnt exist",
 		},
 	}

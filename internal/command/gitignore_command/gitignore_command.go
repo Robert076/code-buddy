@@ -21,10 +21,7 @@ func (g *GitignoreCommand) Description() string {
 func (g *GitignoreCommand) Run(args []string) error {
 	if len(args) == 0 {
 		fmt.Println("Usage: do gitignore <language>")
-		fmt.Println("Supported gitignore templates:")
-		for _, sub := range g.Subcommands() {
-			fmt.Printf("  %s - %s\n", sub.Name(), sub.Description())
-		}
+		fmt.Println("Some supported languages include: Go, Rust, Java etc.")
 		return nil
 	}
 
