@@ -22,7 +22,7 @@ func (g *GitignoreCommandGo) Description() string {
 }
 
 func (g *GitignoreCommandGo) Run(args []string) error {
-	resp, err := http.Get(constants.GithubGitignoreLink)
+	resp, err := http.Get(constants.GithubGitignoreLink + "Go")
 
 	if err != nil {
 		return fmt.Errorf("error fetching github repo for go gitignore: %v", err)
