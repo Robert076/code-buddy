@@ -1,6 +1,6 @@
 # 🌎 code-buddy
 
-CLI tool for fetching the latest gitignore templates for your language when you start a new project. The templates are taken from the official [github gitignore repository](https://github.com/github/gitignore).
+CLI tool for fetching the latest gitignore templates for your language when you start a new project. The templates are taken from the official [github gitignore repository](https://github.com/github/gitignore). As of right now, 155 gitignore templates are supported.
 
 ## 🍿 Live demo
 https://github.com/user-attachments/assets/16e40405-fce4-4d0f-a1cd-a895b1041262
