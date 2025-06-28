@@ -5,11 +5,10 @@ import (
 	"strings"
 
 	"github.com/Robert076/code-buddy/internal/command"
-	"github.com/Robert076/code-buddy/internal/command/gitignore_command/gitignore_go"
+	"github.com/Robert076/code-buddy/internal/constants"
 )
 
-type GitignoreCommand struct {
-}
+type GitignoreCommand struct{}
 
 func (g *GitignoreCommand) Name() string {
 	return "gitignore"
@@ -39,7 +38,9 @@ func (g *GitignoreCommand) Run(args []string) error {
 }
 
 func (g *GitignoreCommand) Subcommands() []command.Command {
-	return []command.Command{
-		&gitignore_go.GitignoreCommandGo{},
+	cmds := make([]command.Command, 0, len(constants.Languages))
+	for _, lang := range constants.Languages {
+		cmds = append(cmds, NewGitignoreSubcommand(lang))
 	}
+	return cmds
 }

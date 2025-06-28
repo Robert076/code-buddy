@@ -5,7 +5,6 @@ import (
 
 	"github.com/Robert076/code-buddy/internal/command"
 	"github.com/Robert076/code-buddy/internal/command/gitignore_command"
-	"github.com/Robert076/code-buddy/internal/command/lint_command"
 )
 
 type CommandRegistry struct {
@@ -23,7 +22,6 @@ func (c *CommandRegistry) RegisterCommand(cmd command.Command) {
 }
 
 func (c *CommandRegistry) InitRegistry() {
-	c.RegisterCommand(&lint_command.LintCommand{})
 	c.RegisterCommand(&gitignore_command.GitignoreCommand{})
 }
 

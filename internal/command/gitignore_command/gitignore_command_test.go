@@ -66,7 +66,7 @@ func TestGitignoreCommand_Subcommands(t *testing.T) {
 	cmd := &GitignoreCommand{}
 	subcommands := cmd.Subcommands()
 
-	if len(subcommands) != 1 {
-		t.Errorf("Expected %d subcommands, got %d", 1, len(subcommands))
+	if len(subcommands) != 2 {
+		t.Errorf("Expected %d subcommands, got %d", 2, len(subcommands))
 	}
 }
