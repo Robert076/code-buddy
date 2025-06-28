@@ -15,7 +15,7 @@ func main() {
 	if len(os.Args) == 1 {
 		fmt.Printf(`=====================================================
 Welcome to code-buddy. Your CLI friend.
-Example command: 'code-buddy gitignore go'
+Example command: 'cb gitignore go'
 =====================================================`)
 	} else {
 		err := reg.RunCommand(os.Args[1], os.Args[2:])
