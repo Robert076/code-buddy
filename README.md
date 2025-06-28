@@ -20,7 +20,7 @@ cd cmd/code-buddy
 
 go build -o cb
 ```
-3. Take that binary file, and move it to `go/bin` (this is for macOS, add it to your path on windows)
+3. Take that binary file, and move it to `usr/local/bin` (this is for macOS, add it to your path on windows)
 ```bash
 mv cb <your_path_to_bin>
 ```
