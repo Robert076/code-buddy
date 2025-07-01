@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/16e40405-fce4-4d0f-a1cd-a895b1041262
 ```bash
 git clone https://github.com/Robert076/code-buddy.git
 ```
-2. Build the binary
+2. Build the binary (you can also use go install instead)
 ```bash
 cd code-buddy
 
